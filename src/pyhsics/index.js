@@ -12,6 +12,7 @@ const Pyhsics = function() {
     const engine = Engine.create()
     const world = engine.world
     let scene = null
+    let runner = null
 
     function render(params) {
         const { element, width, height } = params
@@ -21,13 +22,17 @@ const Pyhsics = function() {
             options: {
                 width,
                 height,
-                showAngleIndicator: true
+                showAngleIndicator: false,
+                wireframes: true
             } 
         })
 
         scene.canvas.style.display = "block"
         
         Render.run(scene)
+
+        runner = Runner.create()
+        Runner.run(runner, engine)
 
         const mouse = Mouse.create(scene.canvas)
         const mouseConstraint = MouseConstraint.create(engine, {
@@ -43,58 +48,47 @@ const Pyhsics = function() {
         World.add(world, mouseConstraint)
     }
 
-    function run() {
-        const runner = Runner.create()
-        Runner.run(runner, engine)
-    }
-
-    function stop() {
-        if(scene !== null) {
-            scene.canvas.remove()
-        }
-    }
-
     function addBodies(maxWidth, maxHeight) {
         const balls = []
         const rects = []
 
-        for(let i = 0; i < 120; i++) {
+        for(let i = 0; i < 50; i++) {
             balls.push(Bodies.circle(
                 Math.random() * maxWidth, 
                 Math.random() * 70, 
-                Math.random() * 25, 
+                Math.random() * 35, 
                 { restitution: Math.random()}
             ))
             rects.push(Bodies.rectangle(
                 Math.random() * maxWidth, 
                 Math.random() * 70,
-                Math.random() * 35,
-                Math.random() * 35,
+                Math.random() * 55,
+                Math.random() * 55,
                 { restitution: Math.random() }
             ))
         }
         World.add(world, balls)
         World.add(world, rects)
         
-        const floor = Bodies.rectangle((maxWidth / 2), (maxHeight - 18), maxWidth, 20, { isStatic: true })
+        const floor = Bodies.rectangle((maxWidth / 2), (maxHeight - 10), maxWidth, 20, { isStatic: true })
         World.add(world, floor)
-
-
     }
 
-    function reverseGravity() {
-        engine.world.gravity.y = -0.5
-        setInterval(() => {
-            engine.world.gravity.y = 1
-        }, 2000)
+    function stop() {
+        Render.stop(scene)
+        World.clear(world)
+        Engine.clear(engine)
+        Runner.stop(runner)
+        scene.canvas.remove()
+        scene.canvas = null
+        render.context = null
+        render.textures = {}
     }
     
     return {
         render,
-        run,
         stop,
-        addBodies,
-        reverseGravity
+        addBodies
     }
 }
 

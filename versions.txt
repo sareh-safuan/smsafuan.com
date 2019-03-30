@@ -1,4 +1,11 @@
 
+== UPDATE v0.0.2 ==
+ - date
+  - 2019-03-30
+ - features
+  - redesign banner and change the wording
+  - fix canvas not full screen when browser resize
+
 == INITIAL RELEASE v0.0.1 ==
  - date
    - 2019-03-24

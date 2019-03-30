@@ -16,19 +16,18 @@ class App extends React.Component {
     componentDidMount() {
         const width = window.innerWidth
         const height = window.innerHeight
-        this.setState({ screen: { width, height } }) 
-        this.physic.run()
-        this.physic.addBodies(width, height)
 
-        setTimeout(() => {
-            this.physic.reverseGravity()
-        }, 5000)
+        this.physic.addBodies(width, height)
+        this.resizeHandler()
+        this.setState({ screen: { width, height } })
     }
 
     resizeHandler() {
         window.addEventListener('resize', () => {
             const width = window.innerWidth
             const height = window.innerHeight
+            this.physic.stop()
+            this.physic.addBodies(width, height)
             this.setState({ screen: { width, height } })
         })
     }
@@ -42,7 +41,6 @@ class App extends React.Component {
         }
 
         if(element !== null) {
-            this.physic.stop()
             this.physic.render(screen)
         }
 

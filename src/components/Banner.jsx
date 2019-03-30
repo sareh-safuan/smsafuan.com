@@ -1,52 +1,55 @@
 import React from 'react'
 
-const style = {
+const container =  {
     width: "700px",
     height: "350px",
-    backgroundColor: "#e4e0df",
+    backgroundColor: "#f7f7f7",
     position: "absolute",
     left: "50%",
     top: "50%",
     transform: "translate(-50%, -50%)",
+    fontFamily: "'Roboto', sans-serif",
 }
 
 const board = {
     margin: "20px"
 }
 
+const p0 = {
+    fontSize: '90px',
+    margin: '5px',
+    textAlign: 'center'
+}
+
 const p1 = {
-    fontFamily: "'Roboto', sans-serif",
-    fontSize: '100px',
-    padding: 0
-}
-
-const p2 = {
-    fontFamily: "'Roboto', sans-serif",
-    fontSize: "24px",
-    margin: "5px"
-}
-
-const p3 = {
-    fontFamily: "'Roboto', sans-serif",
-    fontSize: "14px",
-    margin: "15px 5px"
+    textAlign: 'center',
+    margin: '12px'
 }
 
 const banner = () => {
     return (
-        <div style={style}>
+        <div style={container}>
             <div style={board}>
-                <div style={p1}>
-                    I'm
+                <div style={p0}>
+                    Sareh Safuan
                 </div>
                 <div style={p1}>
-                    Safuan
+                    <i className="fab fa-pushed"></i>
                 </div>
-                <div style={p2}>
-                    Web Developer
+                <div style={p1}>
+                    Full Stack Developer
                 </div>
-                <div style={p3}>
-                    Website still in progress: V 1.0.0
+                <div style={p1}>
+                    <i className="fab fa-pushed"></i>
+                </div>
+                <div style={p1}>
+                    Kuala Lumpur
+                </div>
+                <div style={p1}>
+                    <i className="fab fa-pushed"></i>
+                </div>
+                <div style={p1}>
+                    Make it work . Make it right . Make it fast . <small>v0.0.2</small>
                 </div>
             </div>
         </div>
