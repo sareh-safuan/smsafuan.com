@@ -52,7 +52,7 @@ const Pyhsics = function() {
         const balls = []
         const rects = []
 
-        for(let i = 0; i < 50; i++) {
+        for(let i = 0; i < 60; i++) {
             balls.push(Bodies.circle(
                 Math.random() * maxWidth, 
                 Math.random() * 70, 

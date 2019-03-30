@@ -43,7 +43,7 @@ const banner = () => {
                     <i className="fab fa-pushed"></i>
                 </div>
                 <div style={p1}>
-                    Kuala Lumpur
+                    Kuala Lumpur . Malaysia
                 </div>
                 <div style={p1}>
                     <i className="fab fa-pushed"></i>

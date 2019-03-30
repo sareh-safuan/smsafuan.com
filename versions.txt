@@ -1,4 +1,8 @@
 
+== UPCOMING ==
+ - change background animation
+ - improve banner design
+
 == UPDATE v0.0.2 ==
  - date
   - 2019-03-30
