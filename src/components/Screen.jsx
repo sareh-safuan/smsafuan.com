@@ -1,16 +1,9 @@
 import React from 'react'
+import './style.css'
 
-const style= {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    top: "0",
-    left: "0"
-}
-
-const screen = (props) => {
+const screen = () => {
     return (
-        <div style={style} id="screen">
+        <div className="screen" id="screen">
 
         </div>
     )
