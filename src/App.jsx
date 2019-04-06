@@ -33,19 +33,19 @@ class App extends React.Component {
 
     render() {
         const element = document.getElementById('screen')
-        const screen = {
+        const screenSize = {
             width: this.state.screen.width,
             height: this.state.screen.height,
             element
         }
 
         if(element !== null) {
-            this.physic.render(screen)
+            this.physic.render(screenSize)
         }
 
         return (
             <div>
-                <Screen  screen={screen} />
+                <Screen screen={screenSize} />
                 <Banner />
             </div>
         )

@@ -24,7 +24,7 @@ const banner = () => {
                     <i className="fab fa-pushed"></i>
                 </div>
                 <div className="p1">
-                    Make it work . Make it right . Make it fast . <small>v0.0.2</small>
+                    Javascript . Lifelong Learner . Version <i><small>0.0.3</small></i>
                 </div>
             </div>
         </div>
