@@ -1,13 +1,12 @@
+"use strict"
+
 import Matter from 'matter-js'
 
 const Pyhsics = function() {
-    const Engine = Matter.Engine
-    const Render = Matter.Render
-    const Runner = Matter.Runner
-    const World = Matter.World
-    const Bodies = Matter.Bodies
-    const Mouse = Matter.Mouse
-    const MouseConstraint = Matter.MouseConstraint
+    const {
+        Engine, Render, Runner, World,
+        Bodies, Mouse, MouseConstraint
+    } = Matter
 
     const engine = Engine.create()
     const world = engine.world
@@ -16,6 +15,7 @@ const Pyhsics = function() {
 
     function render(params) {
         const { element, width, height } = params
+        runner = Runner.create()
         scene = Render.create({
             element,
             engine,
@@ -30,10 +30,13 @@ const Pyhsics = function() {
         scene.canvas.style.display = "block"
         
         Render.run(scene)
-
-        runner = Runner.create()
         Runner.run(runner, engine)
 
+        addBodies(width, height)
+        mouseHandler()
+    }
+
+    function mouseHandler() {
         const mouse = Mouse.create(scene.canvas)
         const mouseConstraint = MouseConstraint.create(engine, {
             mouse,
@@ -52,7 +55,7 @@ const Pyhsics = function() {
         const balls = []
         const rects = []
 
-        for(let i = 0; i < 60; i++) {
+        for(let i = 0; i < 40; i++) {
             balls.push(Bodies.circle(
                 Math.random() * maxWidth, 
                 Math.random() * 70, 
@@ -67,10 +70,16 @@ const Pyhsics = function() {
                 { restitution: Math.random() }
             ))
         }
+
+        const floor = Bodies.rectangle(
+            (maxWidth / 2), 
+            (maxHeight - 10), 
+            maxWidth, 20, 
+            { isStatic: true }
+        )
+
         World.add(world, balls)
         World.add(world, rects)
-        
-        const floor = Bodies.rectangle((maxWidth / 2), (maxHeight - 10), maxWidth, 20, { isStatic: true })
         World.add(world, floor)
     }
 
@@ -87,8 +96,7 @@ const Pyhsics = function() {
     
     return {
         render,
-        stop,
-        addBodies
+        stop
     }
 }
 
