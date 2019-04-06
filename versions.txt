@@ -9,6 +9,7 @@
  - features
   - add dist folder to ignore list
   - remove inline css to single css file
+  - refactor physic/index.css file
 
 == UPDATE v0.0.2 ==
  - date
