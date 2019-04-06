@@ -3,6 +3,13 @@
  - change background animation
  - improve banner design
 
+== UPDATE v.0.0.3 ==
+ - date
+  - 2019-04-06
+ - features
+  - add dist folder to ignore list
+  - remove inline css to single css file
+
 == UPDATE v0.0.2 ==
  - date
   - 2019-03-30
