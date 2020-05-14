@@ -1,0 +1,63 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: .5em 1em;
+    font-size: 24px;
+}
+
+.menus {
+    margin: .7em 1em;
+}
+
+.menus > ul {
+    margin: 0;
+}
+
+.menus > ul > li {
+    display: inline;
+    margin-left: .8em;
+}
+
+.toggle-icon {
+    display: none;
+}
+
+.toggle-icon > .burger {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: .5em ;
+}
+
+.mobile-menus {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        justify-content: flex-end;
+    }
+
+    .logo, .menus {
+        display: none;
+    }
+    
+    .toggle-icon {
+        display: block;
+        margin: .5em;
+    }
+
+    .mobile-menus {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: silver;
+        transition: all .25s linear;
+    }
+}

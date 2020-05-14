@@ -1,55 +1,64 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Screen from './components/Screen.jsx'
-import Banner from './components/Banner.jsx'
-import Physic from './pyhsics/index'
+import React, { Fragment, useState } from 'react'
+import "./style.css"
 
-class App extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            screen: { width: null, height: null }
-        }
-        this.physic = new Physic()
-    }
+const App = () => {
 
-    componentDidMount() {
-        const width = window.innerWidth
-        const height = window.innerHeight
+    const [toggle, toggleMenu] = useState(false)
 
-        this.resizeHandler()
-        this.setState({ screen: { width, height } })
-    }
-
-    resizeHandler() {
-        window.addEventListener('resize', () => {
-            const width = window.innerWidth
-            const height = window.innerHeight
-            
-            this.physic.stop()
-            this.setState({ screen: { width, height } })
-        })
-    }
-
-    render() {
-        const element = document.getElementById('screen')
-        const screenSize = {
-            width: this.state.screen.width,
-            height: this.state.screen.height,
-            element
-        }
-
-        if(element !== null) {
-            this.physic.render(screenSize)
-        }
-
+    const renderMobileMenus = () => {
+        const transform = toggle ? 'translateX(0)' : 'translateX(100%)'
         return (
-            <div>
-                <Screen screen={screenSize} />
-                <Banner />
+            <div
+                className="mobile-menus"
+                style={{ transform }}
+            >
+                <span
+                    style={{ fontSize: '24px' }}
+                    onClick={() => {
+                        toggleMenu(!toggle)
+                    }}
+                >
+                    X
+                </span>
+                <ul>
+                    <li>
+                        <button>Home</button>
+                    </li>
+                    <li>
+                        <button>Works</button>
+                    </li>
+                    <li>
+                        <button>Contact</button>
+                    </li>
+                </ul>
             </div>
         )
     }
+
+    return (
+        <Fragment>
+            <div className="navbar">
+                <div className="logo">
+                    logowashere
+                </div>
+                <div className="menus">
+                    <ul>
+                        <li>home</li>
+                        <li>works</li>
+                        <li>contact</li>
+                    </ul>
+                </div>
+                <div className="toggle-icon" onClick={() => {
+                    toggleMenu(!toggle)
+                }}>
+                    <div className="burger"></div>
+                    <div className="burger"></div>
+                    <div className="burger"></div>
+                </div>
+            </div>
+            {renderMobileMenus()}
+        </Fragment>
+    )
 }
 
 export default App
