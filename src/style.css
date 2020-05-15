@@ -1,24 +1,30 @@
+html, body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .logo {
     margin: .5em 1em;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 900;
 }
 
 .menus {
-    margin: .7em 1em;
+    margin: .5em 1em;
 }
 
 .menus > ul {
-    margin: 0;
+    margin: .5em 0;
 }
 
 .menus > ul > li {
     display: inline;
-    margin-left: .8em;
+    margin-left: 1em;
+    font-size: 18px;
 }
 
 .toggle-icon {
@@ -34,6 +40,34 @@
 
 .mobile-menus {
     display: none;
+}
+
+.mobile-close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mobile-close > a {
+    margin: .4em .85em 0;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.mobile-menus > ul {
+    list-style-type: none;
+}
+
+.mobile-menus > ul > li {
+    margin: .5em 0;
+}
+
+li > a {
+    text-decoration: none;
+}
+
+a, a:visited {
+    color: black;
 }
 
 @media only screen and (max-width: 600px) {

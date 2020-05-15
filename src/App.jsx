@@ -41,15 +41,15 @@ const App = () => {
         <Fragment>
             <div className="navbar">
                 <div className="logo">
-                    logowashere
+                    smsafuan.com
                 </div>
                 <Menus changeContent={changeContent} />
                 <HamburgerButton toggleMobileMenu={toggleMobileMenu} />
             </div>
-            <MobileMenus 
-                toggle={toggle} 
+            <MobileMenus
+                toggle={toggle}
                 toggleMobileMenu={toggleMobileMenu}
-                mobileChangeContent={mobileChangeContent}    
+                mobileChangeContent={mobileChangeContent}
             />
             {content}
         </Fragment>
@@ -88,12 +88,14 @@ const MobileMenus = ({ toggle, toggleMobileMenu, mobileChangeContent }) => {
     const transform = toggle ? 'translateX(0)' : 'translateX(100%)'
     return (
         <div className="mobile-menus" style={{ transform }}>
-            <span
-                style={{ fontSize: '24px' }}
-                onClick={toggleMobileMenu}
-            >
-                X
-            </span>
+            <div className="mobile-close">
+                <a
+                    href="#"
+                    onClick={toggleMobileMenu}
+                >
+                    X
+                </a>
+            </div>
             <ul onClick={mobileChangeContent}>
                 <li>
                     <a href="#/home" id="content-1">Home</a>
