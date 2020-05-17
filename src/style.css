@@ -1,5 +1,12 @@
 html, body {
     font-family: 'Noto Sans JP', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+#app {
+    height: 100%;
+    background-image: url("/bg.jpg");
 }
 
 .navbar {
@@ -62,6 +69,47 @@ html, body {
     margin: .5em 0;
 }
 
+.container {
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 .5em;
+}
+
+.wlcm {
+    font-size: 72px;
+    font-weight: bold;
+    padding: 0 .2em;
+}
+
+.wrapper-info {
+    padding: 1em 0;
+}
+
+.info {
+    display: block;
+}
+
+.mobile-info {
+    font-size: 13px;
+    display: none;
+}
+
+.e-link {
+    font-weight: 900;
+}
+
+.email-viewer {
+    text-align: center;
+    font-size: 12px;
+}
+
 li > a {
     text-decoration: none;
 }
@@ -72,10 +120,14 @@ a, a:visited {
 
 @media only screen and (max-width: 600px) {
     .navbar {
-        justify-content: flex-end;
+        justify-content: space-between;
     }
 
-    .logo, .menus {
+    .logo {
+        font-size: 22px;
+    }
+
+    .menus {
         display: none;
     }
     
@@ -93,5 +145,18 @@ a, a:visited {
         height: 100%;
         background-color: silver;
         transition: all .25s linear;
+    }
+
+    .wlcm {
+        font-size: 68px;
+    }
+
+    .info {
+        display: none;
+    }
+
+    .mobile-info {
+        font-size: 13px;
+        display: block;
     }
 }

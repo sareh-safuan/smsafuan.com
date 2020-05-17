@@ -111,10 +111,59 @@ const MobileMenus = ({ toggle, toggleMobileMenu, mobileChangeContent }) => {
     )
 }
 
-const Home = () => <h2>Home</h2>
+const Home = () => {
+    return (
+        <div className="container">
+            <div className="content">
+                <span className="wlcm">Hi!</span>
+                <div className="wrapper-info">
+                    <span className="info">
+                        I'm Sareh Safuan, Software Engineer
+                    </span>
+                    <span className="info">
+                        based in Kuala Lumpur. I code mainly
+                    </span>
+                    <span className="info">
+                        in JavaScript and Python.
+                    </span>
+                    <span className="mobile-info">
+                        I'm Sareh Safuan, Software Engineer based in Kuala Lumpur.
+                        I code mainly in JavaScript and Python.
+                    </span>
+                </div>
+            </div>
+        </div>
+    )
+}
 
-const Works = () => <h2>Works</h2>
+const Works = () => {
+    return (
+        <div className="container">
+            <h2>Works</h2>
+        </div>
+    )
+}
 
-const Contact = () => <h2>Contact</h2>
+const Contact = () => {
+
+    const [viewEmail, setViewEmail] = useState(false)
+    const email = viewEmail ? <p>sarehsafuan@gmail.com</p> : <span></span>
+
+    return (
+        <div className="container">
+            <div className="component">
+                <div>
+                    Click on the <span
+                        className="e-link"
+                        onClick={() => { setViewEmail(!viewEmail) }}
+                    >link</span> to view my email address.
+                </div>
+                <div className="email-viewer">
+                    {email}
+                </div>
+            </div>
+        </div>
+    )
+}
 
 export default App
