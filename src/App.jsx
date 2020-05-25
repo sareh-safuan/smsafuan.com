@@ -147,19 +147,28 @@ const Works = () => {
 const Contact = () => {
 
     const [viewEmail, setViewEmail] = useState(false)
-    const email = viewEmail ? <p>sarehsafuan@gmail.com</p> : <span></span>
+    let emailStr = [
+        's', 'a', 'r', 'e', 'h', 's', 'a', 'f', 'u', 'a', 'n',
+        '@', 'g', 'm', 'a', 'i', 'l', '.', 'c', 'o', 'm'
+    ]
+    emailStr = emailStr.join("")
+    const email = viewEmail ? <p>{emailStr}</p> : <span></span>
+    console.log(emailStr)
 
     return (
         <div className="container">
             <div className="component">
                 <div>
-                    Click on the <span
+                    Drop me an email to get in touch. Click on
+                </div>
+                <div>
+                    the <span
                         className="e-link"
                         onClick={() => { setViewEmail(!viewEmail) }}
                     >link</span> to view my email address.
                 </div>
                 <div className="email-viewer">
-                    {email}
+                   {email}
                 </div>
             </div>
         </div>
