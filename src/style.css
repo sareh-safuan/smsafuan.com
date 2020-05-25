@@ -7,6 +7,7 @@ html, body {
 #app {
     height: 100%;
     background-image: url("/public/bg.jpg");
+    background-size: cover;
 }
 
 .navbar {
@@ -110,15 +111,22 @@ html, body {
     font-size: 12px;
 }
 
+.image-cc {
+    font-size: 11px;
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+}
+
 li > a {
     text-decoration: none;
     transition: .3s ease;
     padding: 20px 0;
 }
 
-a:hover {
-    border-top: 3px solid #060606;
-    border-bottom: 3px solid #060606;
+li > a:hover {
+    border-top: 2px solid #060606;
+    border-bottom: 2px solid #060606;
     padding: 5px 0; 
 }
 
@@ -166,5 +174,9 @@ a, a:visited {
     .mobile-info {
         font-size: 13px;
         display: block;
+    }
+
+    li > a {
+        padding: 0;
     }
 }

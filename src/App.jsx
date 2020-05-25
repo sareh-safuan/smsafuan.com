@@ -52,6 +52,11 @@ const App = () => {
                 mobileChangeContent={mobileChangeContent}
             />
             {content}
+            <span className="image-cc">
+                <a href="https://unsplash.com/photos/kZLaSWR-7J4" target="_blank">
+                    Photo by Thomas Kelley on Unsplash
+                </a>
+            </span>
         </Fragment>
     )
 }
@@ -153,7 +158,6 @@ const Contact = () => {
     ]
     emailStr = emailStr.join("")
     const email = viewEmail ? <p>{emailStr}</p> : <span></span>
-    console.log(emailStr)
 
     return (
         <div className="container">
@@ -168,7 +172,7 @@ const Contact = () => {
                     >link</span> to view my email address.
                 </div>
                 <div className="email-viewer">
-                   {email}
+                    {email}
                 </div>
             </div>
         </div>
