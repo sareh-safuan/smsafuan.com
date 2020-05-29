@@ -144,7 +144,12 @@ const Home = () => {
 const Works = () => {
     return (
         <div className="container">
-            <h2>Works</h2>
+            <span>My sample works are available on GitHub. </span>
+            <div>
+                <a href="https://github.com/sareh-safuan" target="_blank">
+                    <img src="../public/gh.png" width="50px" height="50px" />
+                </a>
+            </div>
         </div>
     )
 }
