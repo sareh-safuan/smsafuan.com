@@ -144,11 +144,16 @@ const Home = () => {
 const Works = () => {
     return (
         <div className="container">
-            <span>My sample works are available on GitHub. </span>
             <div>
-                <a href="https://github.com/sareh-safuan" target="_blank">
-                    <img src="../public/gh.png" width="50px" height="50px" />
-                </a>
+                <p style={{ margin: '4px 0' }}>My sample works are available on GitHub.</p>
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}>
+                    <a href="https://github.com/sareh-safuan" target="_blank">
+                        <img src="../public/gh.png" width="50px" height="50px" />
+                    </a>
+                </div>
             </div>
         </div>
     )
@@ -166,7 +171,7 @@ const Contact = () => {
 
     return (
         <div className="container">
-            <div className="component">
+            <div>
                 <div>
                     Drop me an email to get in touch. Click on
                 </div>

@@ -98,7 +98,6 @@ html, body {
 }
 
 .mobile-info {
-    font-size: 13px;
     display: none;
 }
 
@@ -135,6 +134,10 @@ a, a:visited {
 }
 
 @media only screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+
     .navbar {
         justify-content: space-between;
     }
