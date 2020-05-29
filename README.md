@@ -8,8 +8,6 @@ Landing page for smsafuan.com(https://smsafuan.com)
 
 - React
 
-- Matter JS
-
 ### License
 
 MIT license
