@@ -8,6 +8,11 @@ Landing page for smsafuan.com(https://smsafuan.com)
 
 - React
 
+### TODO
+
+- load google fonts asynchronously
+- configure server to gzip js bundle
+
 ### License
 
 MIT license
